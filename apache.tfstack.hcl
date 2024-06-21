@@ -82,8 +82,8 @@ component "secrets" {
 }
 
 component "apache" {
-    # source = ./apache
-    source = "https://cm.globalcatalog.test.cloud.ibm.com/api/v1-beta/offering/source/archive//solutions/apache-workload/extension?archive=tgz&flavor=standard&installType=extension&kind=terraform&name=deploy-arch-ibm-gm-custom-apache&version=0.0.74"
+    source = ./custom-apache
+    # source = "https://cm.globalcatalog.test.cloud.ibm.com/api/v1-beta/offering/source/archive//solutions/apache-workload/extension?archive=tgz&flavor=standard&installType=extension&kind=terraform&name=deploy-arch-ibm-gm-custom-apache&version=0.0.74"
     inputs = {
         prefix                     = var.prefix
         ssh_private_key            = component.secrets.ssh_private_key
@@ -104,8 +104,8 @@ component "apache" {
 }
 
 component "slz" {
-    # source = ./slz
-    source = "https://cm.globalcatalog.test.cloud.ibm.com/api/v1-beta/offering/source/archive//solutions/custom-slz?archive=tgz&flavor=babyslz&installType=fullstack&kind=terraform&name=deploy-arch-ibm-gm-test-slz&version=0.0.75"
+    source = ./test-slz
+    # source = "https://cm.globalcatalog.test.cloud.ibm.com/api/v1-beta/offering/source/archive//solutions/custom-slz?archive=tgz&flavor=babyslz&installType=fullstack&kind=terraform&name=deploy-arch-ibm-gm-test-slz&version=0.0.75"
     inputs = {
         prefix  = var.prefix
         ssh_key = component.secrets.ssh_key
