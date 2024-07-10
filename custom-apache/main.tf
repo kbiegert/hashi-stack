@@ -64,7 +64,7 @@ data "ibm_is_subnet" "by-subnet-id" {
 module "slz_vsi" {
   #source                     = "git::https://github.com/kbiegert/terraform-ibm-landing-zone-vsi.git"
   source                     = "terraform-ibm-modules/landing-zone-vsi/ibm"
-  version                    = "v3.2.1"
+  version                    = "3.2.1"
   resource_group_id          = local.resource_group_id
   image_id                   = data.ibm_is_image.image.id
   create_security_group      = true
